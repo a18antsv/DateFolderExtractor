@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DateFolderExtractorController">
+   <children>
+      <TextField fx:id="pathTextField" editable="false" layoutX="24.0" layoutY="49.0" prefHeight="25.0" prefWidth="299.0" />
+      <Button fx:id="pathSelectButton" layoutX="333.0" layoutY="49.0" mnemonicParsing="false" onAction="#selectPath" prefWidth="48.0" text="..." />
+
+      <CheckBox fx:id="checkboxFileName" alignment="TOP_CENTER" layoutX="24.0" layoutY="97.0" mnemonicParsing="false" selected="true" text="YYYYMMDD format in file name" />
+      <CheckBox fx:id="checkboxFileMetaData" layoutX="24.0" layoutY="126.0" mnemonicParsing="false" selected="true" text="Date in file metadata " />
+
+      <Button fx:id="runButton" layoutX="24.0" layoutY="196.0" mnemonicParsing="false" onAction="#run" prefWidth="48.0" text="Run" />
+
+      <Label layoutX="405.0" layoutY="28.0" text="Log:" />
+      <TextArea fx:id="logTextArea" editable="false" layoutX="405.0" layoutY="49.0" prefHeight="210.0" prefWidth="430.0" />
+      <Button fx:id="clearLogButton" layoutX="787.0" layoutY="269.0" mnemonicParsing="false" onAction="#clearLog" prefWidth="48.0" text="Clear" />
+      <RadioButton fx:id="directoryRadio" layoutX="24.0" layoutY="28.0" mnemonicParsing="false" onAction="#clearPath" selected="true" text="Select directory">
+         <toggleGroup>
+            <ToggleGroup fx:id="methodGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fileRadio" layoutX="134.0" layoutY="28.0" mnemonicParsing="false" onAction="#clearPath" text="Select files" toggleGroup="$methodGroup" />
+      <CheckBox fx:id="checkboxLastModified" layoutX="24.0" layoutY="155.0" mnemonicParsing="false" selected="true" text="Use last modified date when no other date available" />
+   </children>
+</AnchorPane>
